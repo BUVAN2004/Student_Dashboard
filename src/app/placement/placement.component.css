@@ -1,92 +1,138 @@
-.mainDiv {
+body {
+    margin: 0;
+    background-color: #f7f9fc;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+  
+  .mainDiv {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    padding: 20px;
-}
-
-.firstDiv, .secondDiv, .thirdDiv, .fourthDiv, .fifthDiv {
+    padding: 40px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .mainDiv div {
     background-color: #ffffff;
     width: 250px;
     border-radius: 15px;
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 20px;
-}
-
-.tableSection {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.tableSection h4 {
-    margin-bottom: 20px;
-}
-
-table {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 12px;
-    text-align: center;
-}
-
-th {
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.uploadSection {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.uploadSection h4 {
-    margin-bottom: 10px;
-}
-
-.uploadSection input[type="file"] {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
-h4 {
+    padding: 30px 20px;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  }
+  
+  .mainDiv div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  h4 {
     margin-top: 15px;
-    color: #333;
-}
-
-h2 {
+    color: #007bff;
+    font-weight: 500;
+  }
+  
+  h2 {
     margin-top: 10px;
     color: #007bff;
-}
-
-@media (max-width: 768px) {
+    font-size: 36px;
+    font-weight: 700;
+  }
+  
+  .tableSection {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .tableSection h4 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  table:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e0e7ef;
+  }
+  
+  .uploadSection {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  
+  .uploadSection h4 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  .uploadSection input[type="file"] {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .uploadSection input[type="file"]:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
     .mainDiv {
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .firstDiv, .secondDiv, .thirdDiv, .fourthDiv, .fifthDiv {
-        width: 90%;
+  
+    .mainDiv div {
+      width: 90%;
     }
-
+  
     table {
-        width: 90%;
+      width: 90%;
     }
-}
+  
+    .uploadSection {
+      width: 90%;
+    }
+  }
+  
