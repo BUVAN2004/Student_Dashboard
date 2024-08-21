@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <title>Student Ranking System</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mat-typography">
+    <app-root></app-root>
+  </body>
+  <script>
+    function decodeJWTToken(token) {
+      return JSON.parse(atob(token.split(".")[1]));
+    }
+
+    function handleOauthResponse(response) {
+      const cred = decodeJWTToken(response.credential);
+      sessionStorage.setItem("User", JSON.stringify(cred));
+      if (cred.email.endsWith("@bitsathy.ac.in")) {
+        window.location.href = "/main/dashboard";
+      } else {
+        alert("Use BitsathyMailId");
+      }
+    }
+  </script>
+</html>

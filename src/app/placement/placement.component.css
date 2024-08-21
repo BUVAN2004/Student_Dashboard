@@ -1,0 +1,92 @@
+.mainDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.firstDiv, .secondDiv, .thirdDiv, .fourthDiv, .fifthDiv {
+    background-color: #ffffff;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.tableSection {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.tableSection h4 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.uploadSection {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.uploadSection h4 {
+    margin-bottom: 10px;
+}
+
+.uploadSection input[type="file"] {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+h4 {
+    margin-top: 15px;
+    color: #333;
+}
+
+h2 {
+    margin-top: 10px;
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .mainDiv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .firstDiv, .secondDiv, .thirdDiv, .fourthDiv, .fifthDiv {
+        width: 90%;
+    }
+
+    table {
+        width: 90%;
+    }
+}

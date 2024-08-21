@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Ranking Dashboard</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #e0f7fa;
+        color: #333;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #00796b;
+      }
+
+      /* Welcome Banner */
+      .welcome-banner {
+        background-color: #00796b;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        font-size: 24px;
+        display: inline-block;
+      }
+
+      .welcome-banner span {
+        display: inline-block;
+        animation: fadeOutLetter 5s infinite;
+        animation-delay: calc(var(--char-index) * 0.05s);
+      }
+
+      @keyframes fadeOutLetter {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* Profile and Rank Containers */
+      .profile-rank-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fafafa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .profile-container,
+      .rank-container {
+        flex: 1;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+      }
+
+      .profile-container img {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+      }
+
+      .profile-info {
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .profile-info h5 {
+        margin: 5px 0;
+        font-size: 18px;
+        font-weight: normal;
+        color: #00796b;
+      }
+
+      .rank-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .rank-container h1 {
+        margin: 0;
+        font-size: 48px;
+        color: #00796b;
+      }
+
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .stat-box {
+        background-color: #fafafa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .stat-box h5 {
+        margin: 0;
+        font-size: 16px;
+        color: #00796b;
+      }
+
+      .stat-box h3 {
+        margin: 20px 0 0;
+        font-size: 36px;
+        color: #333;
+      }
+
+      .achievements-container {
+        margin-top: 30px;
+      }
+
+      .achievement {
+        background-color: #e0f2f1;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 15px;
+      }
+
+      .achievement h4 {
+        margin: 0;
+        font-size: 18px;
+        color: #004d40;
+      }
+
+      .achievement p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        color: #666;
+      }
+
+      @media (max-width: 768px) {
+        .profile-rank-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .profile-container,
+        .rank-container {
+          margin-right: 0;
+          margin-bottom: 20px;
+          width: 100%;
+        }
+
+        .profile-container img {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .profile-info {
+          padding-left: 0;
+        }
+
+        .stats-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .stat-box {
+          margin: 10px 0;
+          min-width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Welcome Banner -->
+      <div class="welcome-banner">
+        <span style="--char-index: 0">W</span>
+        <span style="--char-index: 1">e</span>
+        <span style="--char-index: 2">l</span>
+        <span style="--char-index: 3">c</span>
+        <span style="--char-index: 4">o</span>
+        <span style="--char-index: 5">m</span>
+        <span style="--char-index: 6">e</span>
+        <span style="--char-index: 7">,</span>
+        <span style="--char-index: 8">&nbsp;</span>
+        <span style="--char-index: 9">B</span>
+        <span style="--char-index: 10">u</span>
+        <span style="--char-index: 11">v</span>
+        <span style="--char-index: 12">a</span>
+        <span style="--char-index: 13">n</span>
+        <span style="--char-index: 14">&nbsp;</span>
+        <span style="--char-index: 15">T</span>
+        <span style="--char-index: 16">!</span>
+        <span style="--char-index: 17">&nbsp;</span>
+        <span style="--char-index: 18">H</span>
+        <span style="--char-index: 19">e</span>
+        <span style="--char-index: 20">r</span>
+        <span style="--char-index: 21">e</span>
+        <span style="--char-index: 22">&nbsp;</span>
+        <span style="--char-index: 23">i</span>
+        <span style="--char-index: 24">s</span>
+        <span style="--char-index: 25">&nbsp;</span>
+        <span style="--char-index: 26">y</span>
+        <span style="--char-index: 27">o</span>
+        <span style="--char-index: 28">u</span>
+        <span style="--char-index: 29">r</span>
+        <span style="--char-index: 30">&nbsp;</span>
+        <span style="--char-index: 31">s</span>
+        <span style="--char-index: 32">t</span>
+        <span style="--char-index: 33">u</span>
+        <span style="--char-index: 34">d</span>
+        <span style="--char-index: 35">e</span>
+        <span style="--char-index: 36">n</span>
+        <span style="--char-index: 37">t</span>
+        <span style="--char-index: 38">&nbsp;</span>
+        <span style="--char-index: 39">p</span>
+        <span style="--char-index: 40">r</span>
+        <span style="--char-index: 41">o</span>
+        <span style="--char-index: 42">f</span>
+        <span style="--char-index: 43">i</span>
+        <span style="--char-index: 44">l</span>
+        <span style="--char-index: 45">e</span>
+        <span style="--char-index: 46">.</span>
+      </div>
+
+      <!-- Profile and Rank Containers within a Common Box -->
+      <div class="profile-rank-container">
+        <!-- Profile Container -->
+        <div class="profile-container">
+          <div style="display: flex; align-items: center">
+            <img src="photo.jpg" alt="Profile Picture" />
+            <div class="profile-info">
+              <h5>NAME: BUVAN T</h5>
+              <h5>ROLL NO: 737622XXXX</h5>
+              <h5>YEAR: III</h5>
+              <h5>DEPARTMENT: ECE</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rank Container -->
+        <div class="rank-container">
+          <h2>RANK</h2>
+          <h1>1</h1>
+        </div>
+      </div>
+
+      <!-- Statistics Boxes -->
+      <div class="stats-container">
+        <div class="stat-box">
+          <h5>PLACEMENT CUMULATIVE FA%</h5>
+          <h3>66.57</h3>
+        </div>
+        <div class="stat-box">
+          <h5>CUMULATIVE PLACEMENT FA%</h5>
+          <h3>90.55</h3>
+        </div>
+        <div class="stat-box">
+          <h5>ATTENDANCE%</h5>
+          <h3>99.5</h3>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="achievements-container">
+        <div class="achievement">
+          <h4>New Achievement Unlocked: 100% Attendance!</h4>
+          <p>
+            Congratulations on maintaining perfect attendance for the semester.
+          </p>
+        </div>
+        <div class="achievement">
+          <h4>Placement Offer: XYZ Tech</h4>
+          <p>
+            You have received a placement offer from XYZ Tech with a package of
+            6 LPA.
+          </p>
+        </div>
+        <div class="achievement">
+          <h4>Upcoming Event: Hackathon 2024</h4>
+          <p>Join us for the annual Hackathon event on September 10th.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

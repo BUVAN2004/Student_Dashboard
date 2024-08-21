@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Ranking Dashboard</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #fff;
+      }
+
+      .container {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        display: flex;
+        gap: 30px;
+        max-width: 900px;
+        width: 100%;
+      }
+
+      .left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .right {
+        flex: 1;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .left img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      form h2 {
+        color: #ffc107;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      button {
+        background-color: #ffc107;
+        color: #333;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #ff9800;
+      }
+
+      .g_id_signin {
+        display: block;
+        margin: 20px auto 0;
+        max-width: 300px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .left img {
+          max-width: 200px;
+        }
+
+        form input,
+        form button {
+          font-size: 0.9rem;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <h1>Welcome to Student Ranking Dashboard</h1>
+        <img src="login.png" alt="Student" />
+      </div>
+      <div class="right">
+        <form>
+          <h2>LOGIN</h2>
+          <label for="email">EMAIL ID:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <label for="password">PASSWORD:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+          <button type="submit">Sign in</button>
+
+          <p style="text-align: center">or</p>
+
+          <!-- Google Sign-In Button -->
+          <div
+            id="g_id_onload"
+            data-client_id="772453149406-abjsh6ajdo61sr3rcsfqav4u3mj6b5ap.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-callback="handleOauthResponse"
+            data-auto_prompt="false"
+            style="width: 300px"
+          ></div>
+          <div
+            class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="filled_white"
+            data-text="signin_with"
+            data-size="medium"
+            data-logo_alignment="left"
+            id="G-btn"
+          ></div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
