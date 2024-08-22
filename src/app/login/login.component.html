@@ -9,23 +9,34 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+        background-color: #ffffff; /* White background */
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        color: #fff;
+        color: #333333; /* Dark gray text for readability */
+        transition: background-color 0.5s ease;
       }
 
       .container {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Slightly transparent white */
         padding: 40px;
         border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         display: flex;
         gap: 30px;
         max-width: 900px;
         width: 100%;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .container:hover {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
       }
 
       .left {
@@ -40,15 +51,23 @@
 
       .right {
         flex: 1;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(
+          245,
+          245,
+          245,
+          0.85
+        ); /* Light gray for form background */
         padding: 30px;
         border-radius: 15px;
         backdrop-filter: blur(10px);
+        transition: background-color 0.3s ease;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 20px;
+        color: #333333; /* Consistent dark gray text */
+        transition: color 0.3s ease;
       }
 
       .left img {
@@ -56,17 +75,30 @@
         height: auto;
         max-width: 300px;
         border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .left img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
+      }
+
+      .logo {
+        display: block;
+        margin: 0 auto 5px auto;
+        width: 100px; /* Smaller logo size */
+        height: auto;
       }
 
       form {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
       }
 
       form h2 {
-        color: #ffc107;
+        color: #ff8c00; /* Softer orange color for the heading */
         text-align: center;
         margin-bottom: 20px;
       }
@@ -74,25 +106,34 @@
       input[type="email"],
       input[type="password"] {
         padding: 15px;
-        border: none;
+        border: 1px solid #cccccc; /* Light gray border */
         border-radius: 5px;
         font-size: 1rem;
-        color: #333;
+        color: #333333; /* Dark gray text */
+        background-color: #f9f9f9; /* Light gray background for inputs */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      input[type="email"]:focus,
+      input[type="password"]:focus {
+        transform: scale(1.02);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Light shadow on focus */
       }
 
       button {
-        background-color: #ffc107;
-        color: #333;
+        background-color: #ff8c00; /* Softer orange for button */
+        color: #ffffff; /* White text */
         padding: 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         font-size: 1rem;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.3s ease;
       }
 
       button:hover {
-        background-color: #ff9800;
+        background-color: #ffa500; /* Slightly lighter orange on hover */
+        transform: scale(1.05);
       }
 
       .g_id_signin {
@@ -117,6 +158,23 @@
           padding: 10px;
         }
       }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        form h2 {
+          font-size: 1.5rem;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        button {
+          padding: 12px;
+          font-size: 0.85rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -127,6 +185,7 @@
       </div>
       <div class="right">
         <form>
+          <img src="bannari.png" alt="Logo" class="logo" />
           <h2>LOGIN</h2>
           <label for="email">EMAIL ID:</label>
           <input
@@ -151,7 +210,7 @@
           <!-- Google Sign-In Button -->
           <div
             id="g_id_onload"
-            data-client_id="772453149406-abjsh6ajdo61sr3rcsfqav4u3mj6b5ap.apps.googleusercontent.com"
+            data-client_id="YOUR_CLIENT_ID"
             data-context="signin"
             data-ux_mode="popup"
             data-callback="handleOauthResponse"
