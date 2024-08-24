@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Ranking Dashboard</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f6f8; /* Light background for contrast */
+        margin: 0;
+        padding: 0;
+      }
+    
+      .content-wrapper {
+        padding: 20px; 
+        padding-bottom: 70px; 
+        overflow: auto;
+        max-width: 1200px; 
+        margin: auto; 
+        background-color: #ffffff; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+      }
+    
+      .search-container,
+      .filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+    
+      .form-field {
+        flex: 1;
+        min-width: 250px;
+      }
+    
+      .action-button {
+        flex-shrink: 0;
+        width: 150px;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #007bff; /* Primary button color */
+        color: #ffffff; /* Text color */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 16px; /* Increased font size for better readability */
+      }
+    
+      .action-button:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+      }
+    
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+    
+      th,
+      td {
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        padding: 12px;
+      }
+    
+      th {
+        background-color: #343a40; 
+        color: #000000; /* Changed font color to black */
+        font-weight: bold;
+      }
+    
+      tr:hover {
+        background-color: #f1f1f1; 
+      }
+    
+      .paginator {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+      }
+    
+      @media (max-width: 600px) {
+        .search-container,
+        .filter-container {
+          flex-direction: column; /* Stack on small screens */
+        }
+      }
+    
+      mat-form-field {
+        width: 100%; /* Ensure form fields take full width */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <div class="search-container">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Search by Registration Number</mat-label>
+          <input
+            matInput
+            [(ngModel)]="searchTerm"
+            placeholder="Enter reg number"
+          />
+        </mat-form-field>
+        <button
+          mat-raised-button
+          (click)="searchByRegNo()"
+          class="action-button"
+        >
+          Search
+        </button>
+      </div>
+
+      <div class="filter-container">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Min Ranking</mat-label>
+          <input
+            matInput
+            [(ngModel)]="minRank"
+            type="number"
+            placeholder="Min ranking"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Max Ranking</mat-label>
+          <input
+            matInput
+            [(ngModel)]="maxRank"
+            type="number"
+            placeholder="Max ranking"
+          />
+        </mat-form-field>
+        <button
+          mat-raised-button
+          (click)="filterByRanking()"
+          class="action-button"
+        >
+          Filter
+        </button>
+      </div>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Registration Number Column -->
+        <ng-container matColumnDef="RegNo">
+          <th mat-header-cell *matHeaderCellDef>Registration Number</th>
+          <td mat-cell *matCellDef="let student">{{ student.RegNo }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let student">{{ student.Name }}</td>
+        </ng-container>
+
+        <!-- Department Column -->
+        <ng-container matColumnDef="Dept">
+          <th mat-header-cell *matHeaderCellDef>Department</th>
+          <td mat-cell *matCellDef="let student">{{ student.Dept }}</td>
+        </ng-container>
+
+        <!-- Score Column -->
+        <ng-container matColumnDef="Score">
+          <th mat-header-cell *matHeaderCellDef>Score</th>
+          <td mat-cell *matCellDef="let student">{{ student.Score }}</td>
+        </ng-container>
+
+        <!-- Rank Column -->
+        <ng-container matColumnDef="rank">
+          <th mat-header-cell *matHeaderCellDef>Rank</th>
+          <td mat-cell *matCellDef="let student">{{ student.rank }}</td>
+        </ng-container>
+
+        <!-- Department Rank Column -->
+        <ng-container matColumnDef="DeptRank">
+          <th mat-header-cell *matHeaderCellDef>Department Rank</th>
+          <td mat-cell *matCellDef="let student">{{ student.DeptRank }}</td>
+        </ng-container>
+
+        <!-- Table Header and Rows -->
+        <tr
+          mat-header-row
+          *matHeaderRowDef="['RegNo', 'Name', 'Dept', 'Score', 'rank', 'DeptRank']"
+        ></tr>
+        <tr
+          mat-row
+          *matRowDef="
+            let row;
+            columns: ['RegNo', 'Name', 'Dept', 'Score', 'rank', 'DeptRank']
+          "
+        ></tr>
+      </table>
+
+      <mat-paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 50]"
+        showFirstLastButtons
+        class="paginator"
+      ></mat-paginator>
+    </div>
+  </body>
+</html>

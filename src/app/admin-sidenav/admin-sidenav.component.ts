@@ -1,26 +1,24 @@
-import { NgFor } from '@angular/common';
-import { Component, computed, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, computed, signal } from '@angular/core';
+import { MatIconButton } from '@angular/material/button';
+
 import { MatIcon } from '@angular/material/icon';
 import { MatListItem, MatListItemIcon, MatNavList } from '@angular/material/list';
-import{MatSidenav,
-  MatSidenavContainer,
-  MatSidenavContent,}from '@angular/material/sidenav'
-import { MatToolbar } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { ElementRef } from '@angular/core';
-import { MatIconButton } from '@angular/material/button';
 @Component({
-  selector: 'app-sidenav',
+  selector: 'app-admin-sidenav',
   standalone: true,
-  imports: [ MatSidenav,MatSidenavContainer,MatSidenavContent,
-    RouterLink,RouterOutlet,NgFor,MatNavList,MatListItem,RouterLinkActive,
-    MatToolbar,MatIcon,MatIconButton,MatListItemIcon  
+  imports: [MatToolbarModule,MatSidenavModule,MatIcon,RouterOutlet,MatNavList,CommonModule,RouterLink,
+    MatListItem,MatIconButton,MatListItemIcon,RouterLinkActive,MatToolbar
   ],
-  templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.css'
+  templateUrl: './admin-sidenav.component.html',
+  styleUrl: './admin-sidenav.component.css'
 })
-export class SidenavComponent implements OnInit {
+export class AdminSidenavComponent {
 
+  
   userdetails:any = {};
   constructor( private router:Router){}
   ngOnInit():void{
@@ -62,12 +60,13 @@ export class SidenavComponent implements OnInit {
     }
   }
   list = [
-    {name:'HOME',path:'dashboard',icon:'dashboard'},
-    {name:'PS-LEVELS',path:'pslevel',icon:'trending_up'},
-    {name:'PLACEMENT',path:'placement',icon:'business_center'}
+    {name:'Admin Portal',path:'ADMIN_PORTAL',icon:'admin_panel_settings'},
+    {name:'Faculty Portal',path:'FACULT_YPORTAL',icon:'school'},
+    {name:'Student Details',path:'VERFICATION',icon:'book'}
   ]
 
   collapsed = signal(false);
 
-  width = computed(()=>this.collapsed()?'65px':'240px')
+  width = computed(()=>this.collapsed()?'65px':'240px');
+
 }

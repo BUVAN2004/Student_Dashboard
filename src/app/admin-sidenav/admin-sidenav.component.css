@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    background-color: #eef2f6;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3f51b5;
+    color: white;
+    padding: 0 20px;
+    height: 64px;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .toolbar:hover {
+    background-color: #303f9f;
+  }
+  
+  .toolbar-center {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .profile:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  
+  .items button {
+    width: 120px;
+    padding: 10px;
+    border: none;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .items button:hover {
+    background-color: #ddd;
+  }
+  
+  .profile:hover + .items,
+  .items:hover {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .sidenav-container {
+    height: 89vh;
+    background-color: white;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-sidenav {
+    width: 235px;
+    transition: width 0.3s ease;
+  }
+  
+  mat-sidenav:hover {
+    width: 250px;
+  }
+  
+  .sidenav-content {
+    background-color: #eef2f6;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidenav-content:hover {
+    background-color: #e0e7ef;
+  }
+  
+  @media (max-width: 768px) {
+    .toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      padding: 10px 20px;
+    }
+  
+    .toolbar-center {
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .sidenav-container {
+      height: 85vh;
+    }
+  
+    mat-sidenav {
+      width: 100%;
+      max-width: 240px;
+    }
+  }
+  

@@ -1,0 +1,37 @@
+<mat-toolbar class="toolbar">
+    <div class="toolbar-left">
+      <button style="color: white;" mat-icon-button (click)="collapsed.set(!collapsed())"><mat-icon>menu</mat-icon></button>
+    </div>
+    <div class="toolbar-center">
+      <img src="bannari.png" alt="Logo" class="logo" />
+      <span>STUDENT RANKING DASHBOARD</span>
+      <mat-icon>leaderboard</mat-icon>
+    </div>
+    <div class="dropdown">
+      <img
+        src="photo.jpg"
+        alt="Profile"
+        class="profile"
+        id="me"
+        (error)="imgerror()"
+      />
+      <div class="items" id="items">
+        <button [routerLink]="['/dashboard']" id="Dashboard">Dashboard</button>
+        <button id="Logout" (click)="signout()">Logout</button>
+      </div>
+    </div>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened [style.width]="width()">
+      <mat-nav-list>
+        <a style="border-radius: 0%;" routerLinkActive="" #rla="routerLinkActive" [activated]="rla.isActive"  mat-list-item *ngFor="let item of list" routerLink="{{ item.path }}">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon> <span>{{ item.name }}</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content [style.margin-left]="width()" class="sidenav-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

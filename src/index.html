@@ -27,7 +27,9 @@
     function handleOauthResponse(response) {
       const cred = decodeJWTToken(response.credential);
       sessionStorage.setItem("User", JSON.stringify(cred));
-      if (cred.email.endsWith("@bitsathy.ac.in")) {
+      if (cred.email === "buvan.pro06@gmail.com") {
+        window.location.href = "/adminsidenav/ADMIN_PORTAL";
+      } else if (cred.email.endsWith("@bitsathy.ac.in")) {
         window.location.href = "/main/dashboard";
       } else {
         alert("Use BitsathyMailId");

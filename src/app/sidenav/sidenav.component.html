@@ -1,6 +1,6 @@
 <mat-toolbar class="toolbar">
   <div class="toolbar-left">
-    <!-- <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button> -->
+    <button style="color: white;"  mat-icon-button (click)="collapsed.set(!collapsed())"><mat-icon>menu</mat-icon></button>
   </div>
   <div class="toolbar-center">
     <img src="bannari.png" alt="Logo" class="logo" />
@@ -23,14 +23,14 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="side" opened>
+  <mat-sidenav #sidenav mode="side" opened [style.width]="width()">
     <mat-nav-list>
-      <a mat-list-item *ngFor="let item of list" routerLink="{{ item.path }}">
-        <span>{{ item.name }}</span>
+      <a mat-list-item style="border-radius: 0%;"  routerLinkActive="" #rla="routerLinkActive" [activated]="rla.isActive" *ngFor="let item of list" routerLink="{{ item.path }}">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon> <span>{{ item.name }}</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="sidenav-content">
+  <mat-sidenav-content [style.margin-left]="width()" class="sidenav-content">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
