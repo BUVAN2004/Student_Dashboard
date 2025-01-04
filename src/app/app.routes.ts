@@ -32,17 +32,17 @@ export const routes: Routes = [
 			]
 	},
 	{ 
-		path:'adminsidenav',component:AdminSidenavComponent,
+		path:'admin',component:AdminSidenavComponent,
 		children:[
 		{
-				path:'ADMIN_PORTAL',component:AdminComponent
+				path:'home',component:AdminComponent
 			}
 			,
 			{
-				path:'FACULT_YPORTAL',component:MarkEntryComponent
+				path:'faculty',component:MarkEntryComponent
 			},
 			{
-				path:'VERFICATION',component:VerificationComponent
+				path:'student',component:VerificationComponent
 			}
 		]
 	}

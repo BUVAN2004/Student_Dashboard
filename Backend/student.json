@@ -1,0 +1,865 @@
+[
+  {
+    "id": "7376221CS106",
+    "name": "Ananya Singh",
+    "email": "ananya.cs22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Computer Science and Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 88,
+    "cummulativeFa": 85,
+    "attendance": 90,
+    "placementType": "IT",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 95,
+    "batch": "2021 - 2025",
+    "placementRank": 12,
+    "departmentRank": 4,
+    "companiesRegistered": [
+      {
+        "companyName": "Accenture",
+        "companyRegisteredDate": "2024-01-15",
+        "companyAttendedDate": "2024-01-22",
+        "roundsCleared": 3,
+        "status": "Selected"
+      },
+      {
+        "companyName": "Cognizant",
+        "companyRegisteredDate": "2024-02-10",
+        "companyAttendedDate": "2024-02-18",
+        "roundsCleared": 2,
+        "status": "Rejected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Java",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-08-05" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-10-10" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221EC107",
+    "name": "Shivani Reddy",
+    "email": "shivani.ec22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electronics and Communication Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 92,
+    "cummulativeFa": 90,
+    "attendance": 93,
+    "placementType": "Core",
+    "yearOfStudy": "IV - Year",
+    "semester": "Semester-8",
+    "placementAttendance": 94,
+    "batch": "2020 - 2024",
+    "placementRank": 5,
+    "departmentRank": 3,
+    "companiesRegistered": [
+      {
+        "companyName": "Siemens",
+        "companyRegisteredDate": "2024-02-10",
+        "companyAttendedDate": "2024-02-18",
+        "roundsCleared": 4,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Embedded Systems",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-07-25" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-09-15" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376222ME108",
+    "name": "Suresh Kumar",
+    "email": "suresh.me22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Mechanical Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 78,
+    "cummulativeFa": 74,
+    "attendance": 85,
+    "placementType": "NIP",
+    "yearOfStudy": "II - Year",
+    "semester": "Semester-4",
+    "placementAttendance": 75,
+    "batch": "2022 - 2026",
+    "placementRank": 20,
+    "departmentRank": 12,
+    "companiesRegistered": [],
+    "psSkill": [
+      {
+        "language": "Fluid Mechanics",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-09-15" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221CE109",
+    "name": "Rohini Patel",
+    "email": "rohini.ce21@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Civil Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 82,
+    "cummulativeFa": 80,
+    "attendance": 88,
+    "placementType": "Core",
+    "yearOfStudy": "IV - Year",
+    "semester": "Semester-8",
+    "placementAttendance": 92,
+    "batch": "2019 - 2023",
+    "placementRank": 10,
+    "departmentRank": 6,
+    "companiesRegistered": [
+      {
+        "companyName": "ACC",
+        "companyRegisteredDate": "2024-01-05",
+        "companyAttendedDate": "2024-01-15",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "AutoCAD",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-10-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221EE110",
+    "name": "Vikram Singh",
+    "email": "vikram.ee21@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electrical and Electronics Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 84,
+    "cummulativeFa": 80,
+    "attendance": 87,
+    "placementType": "IT and Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 91,
+    "batch": "2020 - 2024",
+    "placementRank": 8,
+    "departmentRank": 2,
+    "companiesRegistered": [
+      {
+        "companyName": "IBM",
+        "companyRegisteredDate": "2024-01-20",
+        "companyAttendedDate": "2024-01-30",
+        "roundsCleared": 2,
+        "status": "Rejected"
+      },
+      {
+        "companyName": "TCS",
+        "companyRegisteredDate": "2024-02-05",
+        "companyAttendedDate": "2024-02-12",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "JavaScript",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-06-18" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-08-22" },
+          { "level": 3, "attempts": 2, "clearedDate": "2023-10-05" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221CS111",
+    "name": "Tanvi Mehta",
+    "email": "tanvi.cs22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Computer Science and Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 90,
+    "cummulativeFa": 88,
+    "attendance": 92,
+    "placementType": "IT",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 95,
+    "batch": "2021 - 2025",
+    "placementRank": 3,
+    "departmentRank": 1,
+    "companiesRegistered": [
+      {
+        "companyName": "Wipro",
+        "companyRegisteredDate": "2024-01-25",
+        "companyAttendedDate": "2024-02-05",
+        "roundsCleared": 3,
+        "status": "Selected"
+      },
+      {
+        "companyName": "Infosys",
+        "companyRegisteredDate": "2024-02-10",
+        "companyAttendedDate": "2024-02-15",
+        "roundsCleared": 2,
+        "status": "Rejected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Python",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-07-10" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-09-01" },
+          { "level": 3, "attempts": 1, "clearedDate": "2023-11-05" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376222ME112",
+    "name": "Ajay Kumar",
+    "email": "ajay.me22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Mechanical Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 74,
+    "cummulativeFa": 72,
+    "attendance": 80,
+    "placementType": "NIP",
+    "yearOfStudy": "II - Year",
+    "semester": "Semester-4",
+    "placementAttendance": 78,
+    "batch": "2022 - 2026",
+    "placementRank": 18,
+    "departmentRank": 15,
+    "companiesRegistered": [],
+    "psSkill": [
+      {
+        "language": "Strength of Materials",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-09-12" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221CE113",
+    "name": "Vijayalakshmi",
+    "email": "vijaya.ce21@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Civil Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 80,
+    "cummulativeFa": 77,
+    "attendance": 85,
+    "placementType": "Core",
+    "yearOfStudy": "IV - Year",
+    "semester": "Semester-8",
+    "placementAttendance": 89,
+    "batch": "2019 - 2023",
+    "placementRank": 6,
+    "departmentRank": 7,
+    "companiesRegistered": [
+      {
+        "companyName": "Tata Projects",
+        "companyRegisteredDate": "2024-01-12",
+        "companyAttendedDate": "2024-01-20",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "STAAD Pro",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-08-15" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221EE114",
+    "name": "Ramesh Babu",
+    "email": "ramesh.ee21@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electrical and Electronics Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 85,
+    "cummulativeFa": 82,
+    "attendance": 90,
+    "placementType": "IT and Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 94,
+    "batch": "2020 - 2024",
+    "placementRank": 4,
+    "departmentRank": 2,
+    "companiesRegistered": [
+      {
+        "companyName": "HCL",
+        "companyRegisteredDate": "2024-02-05",
+        "companyAttendedDate": "2024-02-12",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Python",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-07-20" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-09-18" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221CS115",
+    "name": "Neha Sharma",
+    "email": "neha.cs22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Computer Science and Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 91,
+    "cummulativeFa": 89,
+    "attendance": 94,
+    "placementType": "IT",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 96,
+    "batch": "2021 - 2025",
+    "placementRank": 7,
+    "departmentRank": 5,
+    "companiesRegistered": [
+      {
+        "companyName": "Amazon",
+        "companyRegisteredDate": "2024-01-10",
+        "companyAttendedDate": "2024-01-20",
+        "roundsCleared": 4,
+        "status": "Selected"
+      },
+      {
+        "companyName": "Google",
+        "companyRegisteredDate": "2024-02-05",
+        "companyAttendedDate": "2024-02-12",
+        "roundsCleared": 3,
+        "status": "Rejected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Java",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-08-20" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-10-15" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376222EC116",
+    "name": "Sangeeta Rani",
+    "email": "sangeeta.ec22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electronics and Communication Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 85,
+    "cummulativeFa": 83,
+    "attendance": 90,
+    "placementType": "Core",
+    "yearOfStudy": "IV - Year",
+    "semester": "Semester-8",
+    "placementAttendance": 93,
+    "batch": "2020 - 2024",
+    "placementRank": 9,
+    "departmentRank": 8,
+    "companiesRegistered": [
+      {
+        "companyName": "Schneider Electric",
+        "companyRegisteredDate": "2024-01-20",
+        "companyAttendedDate": "2024-02-01",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "VLSI Design",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-07-05" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221ME117",
+    "name": "Harish Kumar",
+    "email": "harish.me21@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Mechanical Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 78,
+    "cummulativeFa": 76,
+    "attendance": 83,
+    "placementType": "NIP",
+    "yearOfStudy": "II - Year",
+    "semester": "Semester-4",
+    "placementAttendance": 81,
+    "batch": "2022 - 2026",
+    "placementRank": 15,
+    "departmentRank": 12,
+    "companiesRegistered": [],
+    "psSkill": [
+      {
+        "language": "Fluid Mechanics",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-09-18" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376222CE118",
+    "name": "Shankar Rao",
+    "email": "shankar.ce22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Civil Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 79,
+    "cummulativeFa": 77,
+    "attendance": 84,
+    "placementType": "Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 80,
+    "batch": "2021 - 2025",
+    "placementRank": 11,
+    "departmentRank": 9,
+    "companiesRegistered": [
+      {
+        "companyName": "L&T Construction",
+        "companyRegisteredDate": "2024-01-10",
+        "companyAttendedDate": "2024-01-25",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Revit",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-09-02" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221EE119",
+    "name": "Vishal Yadav",
+    "email": "vishal.ee21@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electrical and Electronics Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 82,
+    "cummulativeFa": 79,
+    "attendance": 88,
+    "placementType": "IT and Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 91,
+    "batch": "2020 - 2024",
+    "placementRank": 13,
+    "departmentRank": 10,
+    "companiesRegistered": [
+      {
+        "companyName": "Tata Consultancy Services",
+        "companyRegisteredDate": "2024-01-15",
+        "companyAttendedDate": "2024-01-28",
+        "roundsCleared": 3,
+        "status": "Selected"
+      },
+      {
+        "companyName": "Accenture",
+        "companyRegisteredDate": "2024-02-05",
+        "companyAttendedDate": "2024-02-12",
+        "roundsCleared": 2,
+        "status": "Rejected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Embedded C",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-06-20" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-08-15" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221CS120",
+    "name": "Amit Verma",
+    "email": "amit.cs22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Computer Science and Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 88,
+    "cummulativeFa": 85,
+    "attendance": 91,
+    "placementType": "IT",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 93,
+    "batch": "2021 - 2025",
+    "placementRank": 14,
+    "departmentRank": 10,
+    "companiesRegistered": [
+      {
+        "companyName": "Microsoft",
+        "companyRegisteredDate": "2024-02-05",
+        "companyAttendedDate": "2024-02-12",
+        "roundsCleared": 4,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "C++",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-08-20" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-10-10" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221CS121",
+    "name": "Priya Mehta",
+    "email": "priya.cs22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Computer Science and Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 90,
+    "cummulativeFa": 88,
+    "attendance": 95,
+    "placementType": "IT",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 96,
+    "batch": "2021 - 2025",
+    "placementRank": 6,
+    "departmentRank": 4,
+    "companiesRegistered": [
+      {
+        "companyName": "Infosys",
+        "companyRegisteredDate": "2024-01-25",
+        "companyAttendedDate": "2024-02-05",
+        "roundsCleared": 4,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Python",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-08-12" },
+          { "level": 2, "attempts": 1, "clearedDate": "2023-10-18" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376222EC122",
+    "name": "Ravindra Yadav",
+    "email": "ravindra.ec22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electronics and Communication Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 84,
+    "cummulativeFa": 82,
+    "attendance": 89,
+    "placementType": "Core",
+    "yearOfStudy": "IV - Year",
+    "semester": "Semester-8",
+    "placementAttendance": 90,
+    "batch": "2020 - 2024",
+    "placementRank": 8,
+    "departmentRank": 7,
+    "companiesRegistered": [
+      {
+        "companyName": "Siemens",
+        "companyRegisteredDate": "2024-01-05",
+        "companyAttendedDate": "2024-01-18",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Embedded Systems",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-06-12" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221IT123",
+    "name": "Neelam Kumari",
+    "email": "neelam.it22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Information Technology",
+    "Designation": "Student",
+    "currentPlacementFa": 87,
+    "cummulativeFa": 84,
+    "attendance": 92,
+    "placementType": "IT",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 94,
+    "batch": "2021 - 2025",
+    "placementRank": 9,
+    "departmentRank": 6,
+    "companiesRegistered": [
+      {
+        "companyName": "Capgemini",
+        "companyRegisteredDate": "2024-01-20",
+        "companyAttendedDate": "2024-02-03",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "JavaScript",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-07-05" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221EC124",
+    "name": "Suresh Kumar",
+    "email": "suresh.ec22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electronics and Communication Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 82,
+    "cummulativeFa": 80,
+    "attendance": 85,
+    "placementType": "Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 88,
+    "batch": "2021 - 2025",
+    "placementRank": 11,
+    "departmentRank": 10,
+    "companiesRegistered": [
+      {
+        "companyName": "Cognizant",
+        "companyRegisteredDate": "2024-01-10",
+        "companyAttendedDate": "2024-01-25",
+        "roundsCleared": 2,
+        "status": "Rejected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "C++",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-09-15" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221EE125",
+    "name": "Anjali Singh",
+    "email": "anjali.ee22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electrical and Electronics Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 80,
+    "cummulativeFa": 78,
+    "attendance": 86,
+    "placementType": "Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 89,
+    "batch": "2021 - 2025",
+    "placementRank": 12,
+    "departmentRank": 11,
+    "companiesRegistered": [
+      {
+        "companyName": "GE India",
+        "companyRegisteredDate": "2024-02-01",
+        "companyAttendedDate": "2024-02-10",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "MATLAB",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-08-20" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221CE126",
+    "name": "Haritha Nair",
+    "email": "haritha.ce22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Civil Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 81,
+    "cummulativeFa": 79,
+    "attendance": 87,
+    "placementType": "Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 90,
+    "batch": "2021 - 2025",
+    "placementRank": 14,
+    "departmentRank": 13,
+    "companiesRegistered": [
+      {
+        "companyName": "TATA Projects",
+        "companyRegisteredDate": "2024-01-15",
+        "companyAttendedDate": "2024-02-03",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "AutoCAD",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-09-10" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376222EE127",
+    "name": "Deepika Sharma",
+    "email": "deepika.ee22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electrical and Electronics Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 84,
+    "cummulativeFa": 81,
+    "attendance": 90,
+    "placementType": "Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 91,
+    "batch": "2021 - 2025",
+    "placementRank": 13,
+    "departmentRank": 12,
+    "companiesRegistered": [
+      {
+        "companyName": "Schneider Electric",
+        "companyRegisteredDate": "2024-02-10",
+        "companyAttendedDate": "2024-02-20",
+        "roundsCleared": 2,
+        "status": "Rejected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "PLC Programming",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-07-15" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376222CS128",
+    "name": "Manish Verma",
+    "email": "manish.cs22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Computer Science and Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 89,
+    "cummulativeFa": 87,
+    "attendance": 92,
+    "placementType": "IT",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 94,
+    "batch": "2021 - 2025",
+    "placementRank": 8,
+    "departmentRank": 5,
+    "companiesRegistered": [
+      {
+        "companyName": "Wipro",
+        "companyRegisteredDate": "2024-01-30",
+        "companyAttendedDate": "2024-02-05",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Data Structures",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-08-25" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7376221EE129",
+    "name": "Rakhi Gupta",
+    "email": "rakhi.ee22@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "B.E Electrical and Electronics Engineering",
+    "Designation": "Student",
+    "currentPlacementFa": 80,
+    "cummulativeFa": 78,
+    "attendance": 84,
+    "placementType": "Core",
+    "yearOfStudy": "III - Year",
+    "semester": "Semester-6",
+    "placementAttendance": 85,
+    "batch": "2021 - 2025",
+    "placementRank": 15,
+    "departmentRank": 14,
+    "companiesRegistered": [
+      {
+        "companyName": "ABB India",
+        "companyRegisteredDate": "2024-02-12",
+        "companyAttendedDate": "2024-02-18",
+        "roundsCleared": 3,
+        "status": "Selected"
+      }
+    ],
+    "psSkill": [
+      {
+        "language": "Arduino",
+        "completedStatus": [
+          { "level": 1, "attempts": 1, "clearedDate": "2023-06-25" }
+        ]
+      }
+    ]
+  }
+]
+

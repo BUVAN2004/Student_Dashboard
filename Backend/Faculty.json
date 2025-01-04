@@ -1,0 +1,382 @@
+[
+  {
+    "id": "EC001",
+    "name": "Dr. Rajesh Kumar",
+    "email": "rajesh.kumar@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Computer Science and Engineering",
+    "Designation": "Associate Professor - I",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-08-01",
+        "endDate": "2024-08-14"
+      },
+      {
+        "startDate": "2024-09-12",
+        "endDate": "2024-09-29"
+      }
+    ]
+  },
+  {
+    "id": "EC002",
+    "name": "Dr. Rina Mehta",
+    "email": "rina.mehta@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Electronics and Communication Engineering",
+    "Designation": "Associate Professor - II",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-08-15",
+        "endDate": "2024-08-30"
+      },
+      {
+        "startDate": "2024-09-01",
+        "endDate": "2024-09-15"
+      }
+    ]
+  },
+  {
+    "id": "EE001",
+    "name": "Dr. Suresh Reddy",
+    "email": "suresh.reddy@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Electrical and Electronics Engineering",
+    "Designation": "HOD of Electrical and Electronics Engineering",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-07-01",
+        "endDate": "2024-07-10"
+      },
+      {
+        "startDate": "2024-10-01",
+        "endDate": "2024-10-15"
+      }
+    ]
+  },
+  {
+    "id": "ME001",
+    "name": "Dr. Amit Sharma",
+    "email": "amit.sharma@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Mechanical Engineering",
+    "Designation": "Associate Professor - III",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-08-10",
+        "endDate": "2024-08-20"
+      },
+      {
+        "startDate": "2024-09-05",
+        "endDate": "2024-09-12"
+      }
+    ]
+  },
+  {
+    "id": "IT001",
+    "name": "Dr. Priya Deshmukh",
+    "email": "priya.deshmukh@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Information Technology",
+    "Designation": "HOD of Information Technology",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-06-01",
+        "endDate": "2024-06-15"
+      },
+      {
+        "startDate": "2024-11-01",
+        "endDate": "2024-11-10"
+      }
+    ]
+  },
+  {
+    "id": "HM001",
+    "name": "Prof. Anita Kapoor",
+    "email": "anita.kapoor@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Humanities",
+    "Designation": "Professor",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-07-01",
+        "endDate": "2024-07-10"
+      },
+      {
+        "startDate": "2024-10-01",
+        "endDate": "2024-10-10"
+      }
+    ]
+  },
+  {
+    "id": "TP001",
+    "name": "Mr. Nitin Kumar",
+    "email": "nitin.kumar@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Training & Placement",
+    "Designation": "Placement Officer",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-09-01",
+        "endDate": "2024-09-15"
+      },
+      {
+        "startDate": "2024-12-01",
+        "endDate": "2024-12-10"
+      }
+    ]
+  },
+  {
+    "id": "EC003",
+    "name": "Dr. Harish Joshi",
+    "email": "harish.joshi@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Computer Science and Engineering",
+    "Designation": "Professor",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-07-05",
+        "endDate": "2024-07-20"
+      },
+      {
+        "startDate": "2024-10-01",
+        "endDate": "2024-10-15"
+      }
+    ]
+  },
+  {
+    "id": "CE001",
+    "name": "Dr. Kavita Singh",
+    "email": "kavita.singh@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Civil Engineering",
+    "Designation": "Associate Professor - I",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-08-05",
+        "endDate": "2024-08-18"
+      },
+      {
+        "startDate": "2024-10-05",
+        "endDate": "2024-10-20"
+      }
+    ]
+  },
+  {
+    "id": "IT002",
+    "name": "Dr. Vishal Gupta",
+    "email": "vishal.gupta@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Information Technology",
+    "Designation": "Associate Professor - II",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-09-05",
+        "endDate": "2024-09-20"
+      },
+      {
+        "startDate": "2024-12-01",
+        "endDate": "2024-12-15"
+      }
+    ]
+  },
+  {
+    "id": "ME002",
+    "name": "Dr. Sanjay Patel",
+    "email": "sanjay.patel@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Mechanical Engineering",
+    "Designation": "Associate Professor - II",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-07-15",
+        "endDate": "2024-07-30"
+      },
+      {
+        "startDate": "2024-09-10",
+        "endDate": "2024-09-25"
+      }
+    ]
+  },
+  {
+    "id": "EC004",
+    "name": "Dr. Neha Kapoor",
+    "email": "neha.kapoor@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Electronics and Communication Engineering",
+    "Designation": "Professor",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-06-15",
+        "endDate": "2024-06-30"
+      },
+      {
+        "startDate": "2024-09-05",
+        "endDate": "2024-09-15"
+      }
+    ]
+  },
+  {
+    "id": "CS001",
+    "name": "Dr. Anil Yadav",
+    "email": "anil.yadav@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Computer Science and Engineering",
+    "Designation": "HOD of Computer Science and Engineering",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-07-01",
+        "endDate": "2024-07-15"
+      },
+      {
+        "startDate": "2024-10-01",
+        "endDate": "2024-10-15"
+      }
+    ]
+  },
+  {
+    "id": "IT003",
+    "name": "Dr. Simran Sharma",
+    "email": "simran.sharma@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Information Technology",
+    "Designation": "Associate Professor - I",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-08-05",
+        "endDate": "2024-08-19"
+      },
+      {
+        "startDate": "2024-09-20",
+        "endDate": "2024-10-05"
+      }
+    ]
+  },
+  {
+    "id": "CE002",
+    "name": "Dr. Ravi Kumar",
+    "email": "ravi.kumar@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Civil Engineering",
+    "Designation": "Professor",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-09-01",
+        "endDate": "2024-09-10"
+      },
+      {
+        "startDate": "2024-12-01",
+        "endDate": "2024-12-10"
+      }
+    ]
+  },
+  {
+    "id": "EE002",
+    "name": "Dr. Lakshmi Rao",
+    "email": "lakshmi.rao@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Electrical and Electronics Engineering",
+    "Designation": "Associate Professor - III",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-08-10",
+        "endDate": "2024-08-25"
+      },
+      {
+        "startDate": "2024-10-01",
+        "endDate": "2024-10-15"
+      }
+    ]
+  },
+  {
+    "id": "HM002",
+    "name": "Prof. Rajeshwari Nair",
+    "email": "rajeshwari.nair@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Humanities",
+    "Designation": "Associate Professor",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-06-10",
+        "endDate": "2024-06-20"
+      },
+      {
+        "startDate": "2024-08-05",
+        "endDate": "2024-08-15"
+      }
+    ]
+  },
+  {
+    "id": "TP002",
+    "name": "Mr. Mohit Agarwal",
+    "email": "mohit.agarwal@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Training & Placement",
+    "Designation": "Placement Coordinator",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-09-10",
+        "endDate": "2024-09-25"
+      },
+      {
+        "startDate": "2024-12-05",
+        "endDate": "2024-12-15"
+      }
+    ]
+  },
+  {
+    "id": "EC005",
+    "name": "Dr. Vikas Chauhan",
+    "email": "vikas.chauhan@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Electronics and Communication Engineering",
+    "Designation": "HOD of Electronics and Communication Engineering",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-07-15",
+        "endDate": "2024-07-30"
+      },
+      {
+        "startDate": "2024-09-01",
+        "endDate": "2024-09-15"
+      }
+    ]
+  },
+  {
+    "id": "ME003",
+    "name": "Dr. Shilpa Yadav",
+    "email": "shilpa.yadav@bitsathy.ac.in",
+    "password": "Pass1234",
+    "department": "Mechanical Engineering",
+    "Designation": "Associate Professor - II",
+    "userType": "Faculty",
+    "accessControl": [
+      {
+        "startDate": "2024-08-20",
+        "endDate": "2024-09-05"
+      },
+      {
+        "startDate": "2024-10-01",
+        "endDate": "2024-10-10"
+      }
+    ]
+  }
+]

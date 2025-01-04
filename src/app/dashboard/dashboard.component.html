@@ -1,464 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Ranking Dashboard</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins", sans-serif;
-        background-color: #f5f5f5; /* Updated background color */
-        color: #212121; /* Updated text color */
-      }
-
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 15px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease-in-out;
-      }
-
-      .container:hover {
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #3f51b5; /* Updated primary color */
-        font-size: 28px;
-        border-bottom: 2px solid #3f51b5;
-        padding-bottom: 10px;
-        display: inline-block;
-      }
-
-      /* Welcome Banner */
-      .welcome-banner {
-        background-color: #3f51b5; /* Updated primary color */
-        color: white;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        font-size: 24px;
-        display: inline-block;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .welcome-banner:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .welcome-banner span {
-        display: inline-block;
-        animation: fadeOutLetter 5s infinite;
-        animation-delay: calc(var(--char-index) * 0.05s);
-      }
-
-      @keyframes fadeOutLetter {
-        0% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-
-      /* Profile and Rank Containers */
-      .profile-rank-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start; /* Align items at the start */
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .profile-rank-container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Profile Container */
-      .profile-container {
-        flex: 1;
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        margin-right: 20px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .profile-container img {
-        border-radius: 50%;
-        height: 120px;
-        width: 120px;
-        object-fit: cover;
-      }
-
-      .profile-info {
-        padding-left: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      /* Profile Info Heading */
-      .profile-info h5 {
-        margin: 5px 0;
-        font-size: 18px;
-        font-weight: 500;
-        color: #3f51b5; /* Updated primary color */
-      }
-
-      .rank-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #3f51b5; /* Primary color */
-    color: white; /* Text color changed to white */
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    position: relative;
-    overflow: hidden; /* Hide overflow for background effects */
-  }
-
-  .rank-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    background-color: #3949ab; /* Darker shade on hover */
-  }
-
-  /* Add a gradient effect to the background */
-  .rank-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    z-index: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .rank-container:hover::before {
-    opacity: 0.1;
-  }
-
-  /* Add a glowing border effect */
-  .rank-container::after {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
-    border-radius: 25px;
-    background: linear-gradient(45deg, rgba(63, 81, 181, 0.5), rgba(255, 255, 255, 0));
-    z-index: -1;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-  }
-
-  .rank-container:hover::after {
-    opacity: 1;
-  }
-
-  .rank-container h2 {
-    margin: 0;
-    font-size: 36px; /* Increased font size */
-    font-weight: bold;
-    color: #ffffff; /* White text color */
-    margin-bottom: 15px;
-    z-index: 1; /* Ensure text is above background effects */
-  }
-
-  .rank-container h1 {
-    margin: 0;
-    font-size: 90px; 
-    font-weight: bolder;
-    color: #ffffff; 
-    z-index: 1; 
-  }
-
-  .rank-container h1 {
-    animation: pulse 1.5s infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .profile-rank-container {
-          flex-direction: column;
-          align-items: center; /* Center items in column layout */
-        }
-
-        .profile-container {
-          margin-right: 0;
-          margin-bottom: 20px;
-        }
-
-        .rank-container {
-          margin-left: 0;
-          margin-right: 0;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .profile-info h5 {
-          font-size: 16px;
-        }
-
-        .rank-container h2 {
-          font-size: 28px;
-        }
-
-        .rank-container h1 {
-          font-size: 40px;
-        }
-      }
-
-      .stats-container {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .stat-box {
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        flex: 1;
-        min-width: 250px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .stat-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .stat-box h5 {
-        margin: 0;
-        font-size: 16px;
-        color: #3f51b5; /* Updated primary color */
-      }
-
-      .stat-box h3 {
-        margin: 20px 0 0;
-        font-size: 36px;
-        color: #212121; /* Updated text color */
-      }
-
-      .achievements-container {
-        margin-top: 30px;
-      }
-
-      .achievement {
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-        margin-bottom: 15px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .achievement:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      }
-
-      .achievement h4 {
-        margin: 0;
-        font-size: 18px;
-        color: #3f51b5; /* Updated primary color */
-      }
-
-      .achievement p {
-        margin: 5px 0 0;
-        font-size: 14px;
-        color: #666;
-      }
-
-      @media (max-width: 768px) {
-        .profile-rank-container {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .profile-container,
-        .rank-container {
-          margin-right: 0;
-          margin-bottom: 20px;
-          width: 100%;
-        }
-
-        .profile-container img {
-          margin-right: 0;
-          margin-bottom: 20px;
-        }
-
-        .profile-info {
-          padding-left: 0;
-        }
-
-        .stats-container {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .stat-box {
-          margin: 10px 0;
-          min-width: 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <!-- Welcome Banner -->
-      <div class="welcome-banner">
-        <span style="--char-index: 0">W</span>
-        <span style="--char-index: 1">e</span>
-        <span style="--char-index: 2">l</span>
-        <span style="--char-index: 3">c</span>
-        <span style="--char-index: 4">o</span>
-        <span style="--char-index: 5">m</span>
-        <span style="--char-index: 6">e</span>
-        <span style="--char-index: 7">,</span>
-        <span style="--char-index: 8">&nbsp;</span>
-        <span style="--char-index: 9">B</span>
-        <span style="--char-index: 10">u</span>
-        <span style="--char-index: 11">v</span>
-        <span style="--char-index: 12">a</span>
-        <span style="--char-index: 13">n</span>
-        <span style="--char-index: 14">&nbsp;</span>
-        <span style="--char-index: 15">T</span>
-        <span style="--char-index: 16">!</span>
-        <span style="--char-index: 17">&nbsp;</span>
-        <span style="--char-index: 18">H</span>
-        <span style="--char-index: 19">e</span>
-        <span style="--char-index: 20">r</span>
-        <span style="--char-index: 21">e</span>
-        <span style="--char-index: 22">&nbsp;</span>
-        <span style="--char-index: 23">i</span>
-        <span style="--char-index: 24">s</span>
-        <span style="--char-index: 25">&nbsp;</span>
-        <span style="--char-index: 26">y</span>
-        <span style="--char-index: 27">o</span>
-        <span style="--char-index: 28">u</span>
-        <span style="--char-index: 29">r</span>
-        <span style="--char-index: 30">&nbsp;</span>
-        <span style="--char-index: 31">s</span>
-        <span style="--char-index: 32">t</span>
-        <span style="--char-index: 33">u</span>
-        <span style="--char-index: 34">d</span>
-        <span style="--char-index: 35">e</span>
-        <span style="--char-index: 36">n</span>
-        <span style="--char-index: 37">t</span>
-        <span style="--char-index: 38">&nbsp;</span>
-        <span style="--char-index: 39">p</span>
-        <span style="--char-index: 40">r</span>
-        <span style="--char-index: 41">o</span>
-        <span style="--char-index: 42">f</span>
-        <span style="--char-index: 43">i</span>
-        <span style="--char-index: 44">l</span>
-        <span style="--char-index: 45">e</span>
-        <span style="--char-index: 46">.</span>
-      </div>
-
-      <!-- Profile and Rank Containers -->
-      <div class="profile-rank-container">
-        <!-- Profile Container -->
-        <div class="profile-container">
-          <div style="display: flex; align-items: center">
-            <img src="photo.jpg" alt="Profile Picture" />
-            <div class="profile-info">
-              <h5>NAME: BUVAN T</h5>
-              <h5>ROLL NO: 737622XXXX</h5>
-              <h5>YEAR: III</h5>
-              <h5>DEPARTMENT: ECE</h5>
-            </div>
+  <div class="container">
+    <!-- Welcome Banner -->
+    <div *ngIf="showWelcomeMessage" class="welcome-banner">
+      <p>Welcome, {{ student.name || 'Student' }}! Here is your student profile.</p>
+    </div>
+    <!-- Profile and Rank Containers -->
+    <div class="profile-rank-container">
+      <!-- Profile Container -->
+      <div class="profile-container">
+        <div style="display: flex; align-items: center">
+          <img src="photo.jpg" alt="Profile Picture" />
+          <div class="profile-info">
+            <h5>NAME: {{ (student.name | uppercase) || 'N/A' }}</h5>
+            <h5>ROLL NO: {{ (student.id | uppercase) || 'N/A' }}</h5>
+            <h5>YEAR: {{ (student.yearOfStudy | uppercase) || 'N/A' }}</h5>
+            <h5>DEPARTMENT: {{ (student.department | uppercase) || 'N/A' }}</h5>
           </div>
         </div>
-
-        <!-- Rank Container -->
-        <div class="rank-container">
-          <h2>RANK</h2>
-          <h1>1</h1>
-        </div>
       </div>
 
-      <!-- Statistics Boxes -->
-      <div class="stats-container">
-        <div class="stat-box">
-          <h5>PLACEMENT CUMULATIVE FA%</h5>
-          <h3>66.57</h3>
-        </div>
-        <div class="stat-box">
-          <h5>CUMULATIVE PLACEMENT FA%</h5>
-          <h3>90.55</h3>
-        </div>
-        <div class="stat-box">
-          <h5>ATTENDANCE%</h5>
-          <h3>99.5</h3>
-        </div>
+      <!-- Rank Container -->
+      <div class="rank-container">
+        <h2>RANK</h2>
+        <h1>{{ student.placementRank || 'N/A' }}</h1>
       </div>
-
-      <!-- Achievements -->
-      <div class="achievements-container">
-        <div class="achievement">
-          <h4>New Achievement Unlocked: 100% Attendance!</h4>
-          <p>
-            Congratulations on maintaining perfect attendance for the semester.
-          </p>
-        </div>
-        <div class="achievement">
-          <h4>Placement Offer: XYZ Tech</h4>
-          <p>
-            You have received a placement offer from XYZ Tech with a package of
-            6 LPA.
-          </p>
-        </div>
-        <div class="achievement">
-          <h4>Upcoming Event: Hackathon 2024</h4>
-          <p>Join us for the annual Hackathon event on September 10th.</p>
-        </div>
+      <div class="rank-container">
+        <h2>DEPARTMENT RANK</h2>
+        <h1>{{ student.deptRank || 'N/A' }}</h1>
       </div>
     </div>
-  </body>
-</html>
+
+    <!-- Statistics Boxes -->
+    <div class="stats-container">
+      <div class="stat-box">
+        <h5>CURRENT PLACEMENT FA%</h5>
+        <h3>{{ student.currentPlacementFa || 'N/A' }}</h3>
+      </div>
+      <div class="stat-box">
+        <h5>CUMULATIVE PLACEMENT FA%</h5>
+        <h3>{{ student.cummulativeFa || 'N/A' }}</h3>
+      </div>
+      <div class="stat-box">
+        <h5>ATTENDANCE%</h5>
+        <h3>{{ student.attendance || 'N/A' }}</h3>
+      </div>
+      
+      <div class="placement-box">
+        <h2>PLACEMENT UPDATES</h2>
+        <mat-card style="margin-bottom: 20px;" *ngFor="let update of placementUpdates" class="update-card">
+          <mat-card-header>
+            <mat-card-title>{{ update.title }}</mat-card-title>
+            <mat-card-subtitle>{{ update.startDate | date: 'mediumDate' }} - {{ update.endDate | date: 'mediumDate' }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ update.description }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <a mat-button color="primary" [href]="update.link" target="_blank">Apply Now</a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+    </div>

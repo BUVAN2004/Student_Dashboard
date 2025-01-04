@@ -1,280 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PS Level Page</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins", sans-serif;
-        background-color: #f0f2f5;
-        color: #333;
-      }
-
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 15px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease-in-out;
-      }
-
-      .container:hover {
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #333;
-        font-size: 28px;
-        border-bottom: 2px solid #007bff;
-        padding-bottom: 10px;
-        display: inline-block;
-      }
-
-      .section {
-        margin-bottom: 40px;
-      }
-
-      .section h2 {
-        margin-bottom: 20px;
-        font-size: 24px;
-        color: #555;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 5px;
-        display: inline-block;
-      }
-
-      .levels-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-      }
-
-      .level-box {
-        background-color: #ffffff;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        width: 220px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .level-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .level-box h3 {
-        font-size: 22px;
-        margin-bottom: 15px;
-        color: #007bff;
-      }
-
-      .level-box p {
-        font-size: 18px;
-        margin: 5px 0;
-        color: #777;
-      }
-
-      .table-container {
-        overflow-x: auto;
-        margin-top: 20px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-      }
-
-      th,
-      td {
-        padding: 12px;
-        border: 1px solid #ddd;
-        text-align: left;
-        font-size: 16px;
-      }
-
-      th {
-        background-color: #007bff;
-        color: white;
-        font-weight: 600;
-      }
-
-      table:hover {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .progress-table th {
-        background-color: #007bff;
-      }
-
-      @media (max-width: 768px) {
-        .level-box {
-          width: 100%;
-        }
-
-        .container {
-          padding: 15px;
-        }
-
-        h1 {
-          font-size: 24px;
-        }
-
-        .section h2 {
-          font-size: 20px;
-        }
-
-        th,
-        td {
-          padding: 10px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>PS LEVEL PROGRESS</h1>
-
-      <div class="section">
-        <h2>Level Completion</h2>
-        <div class="levels-container">
-          <div class="level-box">
-            <h3>C Programming</h3>
-            <p>Levels Completed: 6/6</p>
-          </div>
-          <div class="level-box">
-            <h3>Java</h3>
-            <p>Levels Completed: 5/10</p>
-          </div>
-          <div class="level-box">
-            <h3>Electronics</h3>
-            <p>Levels Completed: 3/5</p>
-          </div>
-          <div class="level-box">
-            <h3>Full-Stack Projects</h3>
-            <p>Completed: 2 Projects</p>
-          </div>
+ <div class="container">
+    <h1>PS LEVEL PROGRESS</h1>
+  
+    <!-- Dynamic Level Completion Section -->
+    <div class="section">
+      <h2>Level Completion</h2>
+      <div class="levels-container">
+        <div class="level-box" *ngFor="let skill of psskill">
+          <h3>{{ skill.language }}</h3>
+          <p>
+            Levels Completed: 
+            {{ skill.completedStatus.length }}/
+            {{ skill.completedStatus[skill.completedStatus.length - 1].level || 'N/A' }}
+          </p>
         </div>
       </div>
-
-      <div class="section">
-        <h2>Skills Progress</h2>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Skill Name</th>
-                <th>Level</th>
-                <th>No. of Attempts</th>
-                <th>Cleared Level Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>C Programming Level 1</td>
+    </div>
+  
+    <!-- Dynamic Skills Progress Section -->
+    <div class="section">
+      <h2>Skills Progress</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Skill Name</th>
+              <th>Level</th>
+              <th>No. of Attempts</th>
+              <th>Cleared Level Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Iterate over each skill -->
+            <ng-container *ngFor="let skill of psskill">
+              <!-- Iterate over completedStatus within the skill -->
+              <tr *ngFor="let status of skill.completedStatus">
+                <td>{{ skill.language }} Level {{ status.level }}</td>
                 <td>Completed</td>
-                <td>2</td>
-                <td>2024-01-10</td>
+                <td>{{ status.attempts }}</td>
+                <td>{{ status.clearedDate | date: 'yyyy-MM-dd' }}</td>
               </tr>
-              <tr>
-                <td>C Programming Level 2</td>
-                <td>Completed</td>
-                <td>1</td>
-                <td>2024-02-15</td>
-              </tr>
-              <tr>
-                <td>C Programming Level 3</td>
-                <td>Completed</td>
-                <td>1</td>
-                <td>2024-03-05</td>
-              </tr>
-              <tr>
-                <td>C Programming Level 4</td>
-                <td>Completed</td>
-                <td>2</td>
-                <td>2024-03-25</td>
-              </tr>
-              <tr>
-                <td>C Programming Level 5</td>
-                <td>Completed</td>
-                <td>1</td>
-                <td>2024-04-15</td>
-              </tr>
-              <tr>
-                <td>C Programming Level 6</td>
-                <td>Completed</td>
-                <td>1</td>
-                <td>2024-05-01</td>
-              </tr>
-              <tr>
-                <td>Java Level 1</td>
-                <td>Completed</td>
-                <td>3</td>
-                <td>2024-03-20</td>
-              </tr>
-              <tr>
-                <td>Java Level 2</td>
-                <td>Completed</td>
-                <td>2</td>
-                <td>2024-04-10</td>
-              </tr>
-              <tr>
-                <td>Java Level 3</td>
-                <td>Completed</td>
-                <td>2</td>
-                <td>2024-05-05</td>
-              </tr>
-              <tr>
-                <td>Java Level 4</td>
-                <td>Completed</td>
-                <td>1</td>
-                <td>2024-06-01</td>
-              </tr>
-              <tr>
-                <td>Java Level 5</td>
-                <td>Completed</td>
-                <td>3</td>
-                <td>2024-07-01</td>
-              </tr>
-              <tr>
-                <td>Electronics Level 1</td>
-                <td>Completed</td>
-                <td>2</td>
-                <td>2024-02-01</td>
-              </tr>
-              <tr>
-                <td>Electronics Level 2</td>
-                <td>Completed</td>
-                <td>1</td>
-                <td>2024-03-01</td>
-              </tr>
-              <tr>
-                <td>Electronics Level 3</td>
-                <td>Completed</td>
-                <td>2</td>
-                <td>2024-04-01</td>
-              </tr>
-              <!-- Add more rows as necessary for other levels and skills -->
-            </tbody>
-          </table>
-        </div>
+            </ng-container>
+          </tbody>
+        </table>
       </div>
-
+    </div>
+  </div>
+  
+  <div class="container">
       <div class="section">
         <h2>Full-Stack Project Stages</h2>
         <div class="table-container">
@@ -316,6 +88,3 @@
         </div>
       </div>
     </div>
-  </body>
-
-</html>

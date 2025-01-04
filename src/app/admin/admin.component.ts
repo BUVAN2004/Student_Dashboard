@@ -1,48 +1,47 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-
-interface Faculty {
-  id: number; // 3-digit ID
-  name: string;
-  department: string; // Engineering-related departments
-  deptShortName: string; // Short form of the department name
-  hasAccess: boolean;
-}
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { Faculty, HomeService, fullstackmark } from '../Services/Backend.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [FormsModule, CommonModule, MatInputModule, MatTableModule],
+  imports: [FormsModule, CommonModule, MatInputModule, MatTableModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatCardModule, MatToolbarModule, MatDividerModule],
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-  admin = {
-    name: 'Admin',
-    role: 'Super Admin'
-  };
+  admin : any = {};
+  faculties: Faculty[] = [] as any;
+  marks : fullstackmark = {} as any;
 
-  faculties: Faculty[] = [
-    { id: 101, name: 'Arun Kumar', department: 'Computer Science and Engineering', deptShortName: 'CSE', hasAccess: false },
-    { id: 102, name: 'Priya Ramesh', department: 'Electronics and Communication Engineering', deptShortName: 'ECE', hasAccess: false },
-    { id: 103, name: 'Karthik Vijay', department: 'Information Technology', deptShortName: 'IT', hasAccess: false },
-    { id: 104, name: 'Meena Srinivasan', department: 'Electrical and Electronics Engineering', deptShortName: 'EEE', hasAccess: false },
-    { id: 105, name: 'Raj Mohan', department: 'Mechanical Engineering', deptShortName: 'MECH', hasAccess: false },
-    { id: 106, name: 'Asha Lakshmi', department: 'Mechatronics Engineering', deptShortName: 'MECH', hasAccess: false },
-    { id: 107, name: 'Dinesh Kumar', department: 'Biotechnology', deptShortName: 'Biotech', hasAccess: false },
-    { id: 108, name: 'Nisha Ramachandran', department: 'Biomedical Engineering', deptShortName: 'BME', hasAccess: false },
-    { id: 109, name: 'Sanjay Krishnan', department: 'Textile Engineering', deptShortName: 'Textile', hasAccess: false },
-    { id: 110, name: 'Pooja Chandran', department: 'Fashion Technology', deptShortName: 'Fashion', hasAccess: false },
-    { id: 111, name: 'Ramesh Kumar', department: 'Information Science Engineering', deptShortName: 'ISE', hasAccess: false },
-    { id: 112, name: 'Anjali Gupta', department: 'Computer Science and Business Systems', deptShortName: 'CSBS', hasAccess: false },
-    { id: 113, name: 'Vikram Singh', department: 'Computer Science and Design', deptShortName: 'CSD', hasAccess: false },
-    { id: 114, name: 'Neha Sharma', department: 'Civil Engineering', deptShortName: 'Civil', hasAccess: false },
-    { id: 115, name: 'Suresh Babu', department: 'Agricultural Engineering', deptShortName: 'Agri', hasAccess: false }
-];
-
+  constructor(private service : HomeService,public MatDialog : MatDialog){}
+  ngOnInit(){
+    this.service.getMarks().subscribe({
+      next : (data) => {
+        this.marks = data.fullstackmarks;
+        console.log(this.marks);
+      }
+    })
+    this.admin = JSON.parse(sessionStorage.getItem('user')??'');
+    this.service.getAllFaculties().subscribe({
+      next : (data) => {
+        this.faculties = data.facultyData;
+        console.log('Response:', data);
+      },
+      error : (error : any) => {
+        console.error('Error:', error);
+      }
+    });
+ }
   placementUpdate = {
     title: '',
     message: '',
@@ -61,8 +60,16 @@ export class AdminComponent {
     this.placementUpdate = { title: '', message: '', attachments: [] };
   }
 
-  toggleAccess(faculty: Faculty) {
-    faculty.hasAccess = !faculty.hasAccess;
+  toggleAccess(facultyData : Faculty) {
+    this.service.postFacultyAccess(facultyData).subscribe({
+      next : (data) => {
+        console.log('Response:', data);
+      },
+      error : (error : any) => {
+        console.error('Error:', error);
+      }
+    });
+    console.log(facultyData);
   }
 
   get filteredFaculties() {
@@ -70,4 +77,54 @@ export class AdminComponent {
       faculty.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
+
+  @ViewChild ("dialog") dialog !: TemplateRef <any>
+  openDialog(): void {
+    this.MatDialog.open(this.dialog, {
+      data: this.marks,
+      width: '90vw', 
+      height: 'auto', 
+      maxWidth: '100vw', // Optional: Prevents dialog from being constrained to default max width
+      maxHeight: '100vh', // Optional: Prevents dialog from being constrained to default max height
+      // panelClass: 'custom-dialog-container' // Optional: Add a custom class for more control
+    });
+  }
+
+  // Add a new stage
+  addStage(): void {
+    this.marks.stages.push({
+      stageName: '',
+      description: '',
+      parameters: []
+    });
+  }
+
+  // Remove a stage
+  removeStage(stageIndex: number): void {
+    if (stageIndex > -1) {
+      this.marks.stages.splice(stageIndex, 1);
+    }
+  }
+
+  // Add a new parameter to a stage
+  addParameter(stageIndex: number): void {
+    this.marks.stages[stageIndex].parameters.push({
+      parameterName: '',
+      maxMark: 0
+    });
+  }
+
+  // Remove a parameter from a stage
+  removeParameter(stageIndex: number, paramIndex: number): void {
+    if (paramIndex > -1) {
+      this.marks.stages[stageIndex].parameters.splice(paramIndex, 1);
+    }
+  }
+
+  OnPost(){
+    this.service.putUpdateMarks(this.marks).subscribe((res) => {
+        console.log('Marks Data sent successfully');
+    })
+  }
+  
 }

@@ -1,260 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Portal</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-      }
-
-      .admin-container {
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 900px; /* Increased width for better visibility */
-        margin: 20px auto;
-        transition: box-shadow 0.3s;
-      }
-
-      .admin-container:hover {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      h1 {
-        color: #007bff;
-        text-align: center;
-      }
-
-      h2 {
-        margin-top: 20px;
-        color: #333;
-      }
-
-      /* Placement Update Container */
-      .placement-update-container {
-        background-color: #e9f7fe;
-        border: 1px solid #007bff;
-        border-radius: 8px;
-        padding: 20px;
-        margin-top: 20px;
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-
-      .placement-update-container:hover {
-        transform: scale(1.02);
-        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
-      }
-
-      /* Form Styles */
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      label {
-        margin-top: 10px;
-        font-weight: bold;
-      }
-
-      input[type="text"],
-      textarea {
-        margin-top: 5px;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 16px;
-      }
-
-      input[type="file"] {
-        margin-top: 5px;
-      }
-
-      button {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s;
-      }
-
-      button:hover {
-        background-color: #0056b3;
-      }
-
-      /* Faculty Access Styles */
-      .faculty-access {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .search-container {
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-      }
-
-      /* Table Styles */
-      .faculty-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
-      }
-
-      .faculty-table th,
-      .faculty-table td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .faculty-table th {
-        background-color: #007bff;
-        color: white;
-      }
-
-      .faculty-table tr:hover {
-        background-color: #f1f1f1;
-      }
-
-      .faculty-table td input[type="checkbox"] {
-        cursor: pointer;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 600px) {
-        .faculty-table {
-          font-size: 14px;
-        }
-
-        .faculty-table th,
-        .faculty-table td {
-          padding: 8px;
-        }
-
-        .admin-container {
-          padding: 15px;
-        }
-
-        h1 {
-          font-size: 24px;
-        }
-
-        h2 {
-          font-size: 20px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="admin-container">
-      <h1>Welcome Back, {{ admin.name }}</h1>
-      <p style="text-align: center">Role: {{ admin.role }}</p>
-
-      <div class="placement-update-container">
-        <h2>Placement Updates</h2>
-        <form (submit)="sendPlacementUpdate()">
-          <label for="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            [(ngModel)]="placementUpdate.title"
-            placeholder="Enter title"
-            required
-          />
-
-          <label for="message">Message:</label>
-          <textarea
-            id="message"
-            [(ngModel)]="placementUpdate.message"
-            placeholder="Enter message"
-            required
-          ></textarea>
-
-          <label for="attachments">Attachments:</label>
-          <input
-            type="file"
-            id="attachments"
-            (change)="onFileChange($event)"
-            multiple
-          />
-
-          <button type="submit">Send Update</button>
-        </form>
+<div class="body">
+  <div class="admin-container">
+    <h1>Welcome Back, {{ admin.name }}</h1>
+    <div class="admin-details-card">
+      <div class="card-header">
+        <h2>Admin Details</h2>
       </div>
-
-      <h2>Faculty Grant Access</h2>
-      <div class="faculty-access">
-        <div class="search-container">
-          <mat-form-field appearance="fill" style="width: 100%">
-            <mat-label>Search Faculty</mat-label>
-            <input
-              matInput
-              [(ngModel)]="searchTerm"
-              placeholder="Search by name"
-            />
-          </mat-form-field>
+      <div class="card-content">
+        <div class="admin-info">
+          <div class="info-item">
+            <span class="info-label">Name:</span>
+            <span class="info-value">{{ admin.name }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">ID:</span>
+            <span class="info-value">{{ admin.id }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Email:</span>
+            <span class="info-value">{{ admin.email }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Department:</span>
+            <span class="info-value">{{ admin.department }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Designation:</span>
+            <span class="info-value">{{ admin.Designation }}</span>
+          </div>
         </div>
-
-        <table
-          mat-table
-          [dataSource]="filteredFaculties"
-          class="faculty-table"
-          style="width: 100%"
-        >
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Name</th>
-            <td mat-cell *matCellDef="let faculty">{{ faculty.name }}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>ID</th>
-            <td mat-cell *matCellDef="let faculty">{{ faculty.id }}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="department">
-            <th mat-header-cell *matHeaderCellDef>Department</th>
-            <td mat-cell *matCellDef="let faculty">{{ faculty.department }}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="access">
-            <th mat-header-cell *matHeaderCellDef>Access</th>
-            <td mat-cell *matCellDef="let faculty">
-              <input
-                type="checkbox"
-                [(ngModel)]="faculty.hasAccess"
-                (change)="toggleAccess(faculty)"
-              />
-            </td>
-          </ng-container>
-
-          <tr
-            mat-header-row
-            *matHeaderRowDef="['name', 'id', 'department', 'access']"
-          ></tr>
-          <tr
-            mat-row
-            *matRowDef="
-              let row;
-              columns: ['name', 'id', 'department', 'access']
-            "
-          ></tr>
-        </table>
       </div>
+    </div>    
+
+    <div>
+      <h2>Stage Marks Control</h2>
+      <button mat-button (click)="openDialog()">Marks Allotment</button>
     </div>
-    <br /><br />
-  </body>
-</html>
+    <!-- Placement Updates Section -->
+    <div class="placement-update-container">
+      <h2>Placement Updates</h2>
+      <form (submit)="sendPlacementUpdate()">
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          [(ngModel)]="placementUpdate.title"
+          placeholder="Enter title"
+          required
+          name="title"
+        />
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          [(ngModel)]="placementUpdate.message"
+          placeholder="Enter message"
+          required
+          name="message"
+        ></textarea>
+        <label for="attachments">Attachments:</label>
+        <input
+          type="file"
+          id="attachments"
+          (change)="onFileChange($event)"
+          multiple
+        />
+        <button type="submit">Send Update</button>
+      </form>
+    </div>
+
+    <!-- Faculty Grant Access Section -->
+    <h2>Faculty Grant Access</h2>
+    <div class="faculty-access">
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Search Faculty</mat-label>
+        <input
+          matInput
+          [(ngModel)]="searchTerm"
+          placeholder="Search by name"
+          name="search"
+        />
+      </mat-form-field>
+      <table
+        mat-table
+        [dataSource]="filteredFaculties"
+        class="faculty-table"
+        style="width: 100%"
+      >
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let faculty">{{ faculty.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let faculty">{{ faculty.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="department">
+          <th mat-header-cell *matHeaderCellDef>Department</th>
+          <td mat-cell *matCellDef="let faculty">{{ faculty.department }}</td>
+        </ng-container>
+        <ng-container matColumnDef="access">
+          <th mat-header-cell *matHeaderCellDef>Access</th>
+          <td mat-cell *matCellDef="let faculty">
+            <input
+              type="checkbox"
+              [(ngModel)]="faculty.hasAccess"
+              (change)="toggleAccess(faculty)"
+            />
+          </td>
+        </ng-container>
+        <tr
+          mat-header-row
+          *matHeaderRowDef="['name', 'id', 'department', 'access']"
+        ></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: ['name', 'id', 'department', 'access']"
+        ></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #dialog let-data>
+  <h2 mat-dialog-title>{{ data.title }}</h2>
+  <mat-dialog-content class="mat-typography dialog-content">
+    <div *ngFor="let d of data.stages; let stageIndex = index" class="stage-container">
+      <mat-card class="stage-card">
+        <mat-card-header class="card-header">
+          <mat-card-title>Stage {{ stageIndex + 1 }}</mat-card-title>
+          <div class="title-button">
+            <button mat-icon-button color="warn" (click)="removeStage(stageIndex)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="form-row">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Stage Name</mat-label>
+              <input matInput type="text" [(ngModel)]="d.stageName" placeholder="Enter Stage Name">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Description</mat-label>
+              <input matInput type="text" [(ngModel)]="d.description" placeholder="Enter Description">
+            </mat-form-field>
+          </div>
+          <div class="parameters-container">
+            <h3>Parameters</h3>
+            <div *ngFor="let param of d.parameters; let paramIndex = index" class="parameter-row">
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Parameter Name</mat-label>
+                <input matInput type="text" [(ngModel)]="param.parameterName" placeholder="Enter Parameter Name">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Max Mark</mat-label>
+                <input matInput type="number" [(ngModel)]="param.maxMark" placeholder="Enter Max Mark">
+              </mat-form-field>
+              <button mat-icon-button color="warn" (click)="removeParameter(stageIndex, paramIndex)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <button mat-stroked-button color="primary" class="add-parameter-btn" (click)="addParameter(stageIndex)">+ Add Parameter</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <button mat-stroked-button color="accent" class="add-stage-btn" (click)="addStage()">+ Add Stage</button>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" class="dialog-actions">
+    <button mat-button mat-dialog-close style="margin-right: 10px;">Cancel</button>
+    <button mat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click) = "OnPost()">Update</button>
+  </mat-dialog-actions>
+
+</ng-template>
+
+
